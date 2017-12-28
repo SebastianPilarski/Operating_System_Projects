@@ -828,7 +828,7 @@ void mkssfs(int fresh) {
     char disk_name[7] = "MyDisk";
 
     if(fresh) {
-        //close_disk(); // TODO -- Causes crash!!!
+        //close_disk(); // TODO -- Causes crash due to bug in external code!!! I submitted bug report + suggested fix
         int err = init_fresh_disk(disk_name, NUMBER_OF_BYTES_BLOCK, NUMBER_OF_BLOCKS);
         if(err) return;
 

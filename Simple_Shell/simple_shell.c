@@ -1,3 +1,35 @@
+/*
+ * This file contains a simple shell for running on a UNIX terminal
+ *
+ * The simple shell implements background processes, signal processing of CTRL-C
+ * to kill a program running inside the shell. Piping and redirection are also
+ * implemented.
+ *
+ * The following commands are implemented:
+ * Built-In functions:
+ *   cd
+ *   pwd
+ *   exit
+ *   fg
+ *   jobs
+ * Simple Output Redirection:
+ *   >
+ * Simple Command Piping:
+ *   |
+ * Put to Background:
+ *   &
+ *
+ * The file is organized as follows:
+ * 1) Macros and variable definitions
+ * 2) Foreground and Background related functions
+ * 3) Args related functions
+ * 4) Getting of Command function
+ * 5) Signal Handlers
+ * 6) Built-In Functions
+ * 7) Redirection and Piping related
+ * 8) Main for running a simple shell
+ */
+
 #include <stdio.h>
 #include <ctype.h>
 #include <unistd.h>
@@ -10,7 +42,7 @@
 
 //******************************************************************************
 // Macros
-#define MAXARGS       20   //maximum number of arugments
+#define MAXARGS       20   //maximum number of arguments
 #define MAX_CWD       1024 //limit on cwd string length
 #define MAX_PROCESSES 20   //limit on number of background processes
 #define KILL_ON_EXIT  0    //kill background processes on exit - bash doesn't (change to 1 to kill)

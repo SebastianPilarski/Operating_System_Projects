@@ -1,3 +1,20 @@
+/*
+ * This file contains a simple key-value-store API
+ *
+ * It allows for the creation of a key-value store, writing a key-value pair,
+ * reading of a key's values one by one, and reading all-values for a key.
+ *
+ * The file is organized as follows:
+ * 1) Basic structures for key-value store defined
+ * 2) Miscellaneous functions including hashing function
+ * 3) Initialization functions
+ * 4) Write functions
+ * 5) Read functions
+ * 6) Debug functions
+ * 7) API functions
+ *
+ */
+
 #include <stdio.h>
 #include <sys/mman.h>
 #include <sys/stat.h>
@@ -223,7 +240,7 @@ void printf_pod(const struct s_pod* p) {
 }
 
 //***********************************************************************
-//
+// Key-Value Store API
 //***********************************************************************
 
 sem_t* sem_clr;
